@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import SearchBar from '../atoms/SearchBar';
+import SearchResults from "components/molecules/SearchResults.tsx";
 import axios from 'axios';
+import { Movie } from '../../types/Movie';
 
 const MovieSearch: React.FC = () => {
-    const [movies, setMovies] = useState([]);
+    const [movies, setMovies] = useState<Movie[]>([]);
 
     const searchMovies = async (query: string) => {
         const apiKey = 'c1c9953e'; // TODO: add to .env file
@@ -11,17 +13,18 @@ const MovieSearch: React.FC = () => {
 
         try {
             const response = await axios.get(url);
-            setMovies(response.data.Search); // Handle the response as needed for your application
+            const searchResults = response.data || []
+            const moviesArray = Array.isArray(searchResults) ? searchResults : [searchResults];
+            setMovies(moviesArray);
         } catch (error) {
             console.error('Error fetching data: ', error);
-            // Handle error state
         }
     };
 
     return (
         <div>
             <SearchBar onSearch={searchMovies} />
-            {/* Render search results here */}
+            <SearchResults movies={movies} />
         </div>
     );
 };

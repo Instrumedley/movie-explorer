@@ -1,29 +1,17 @@
-import React, { useState } from 'react';
-import SearchBar from '../components/atoms/SearchBar';
-import axios from 'axios';
+import React from 'react';
+import MovieSearch from '../components/molecules/MovieSearch';
 
-const MovieSearch: React.FC = () => {
-  const [movies, setMovies] = useState([]);
-
-  const searchMovies = async (query: string) => {
-    const apiKey = 'c1c9953e'; // Should ideally be an environment variable
-    const url = `http://www.omdbapi.com/?t=${encodeURIComponent(query)}&apikey=${apiKey}`;
-
-    try {
-      const response = await axios.get(url);
-      setMovies(response.data.Search); // Handle the response as needed for your application
-    } catch (error) {
-      console.error('Error fetching data: ', error);
-      // Handle error state
-    }
-  };
-
+const App: React.FC = () => {
   return (
-      <div>
-        <SearchBar onSearch={searchMovies} />
-        {/* Render search results here */}
+      <div className="app bg-gray-900 min-h-screen text-white">
+        <div className="container mx-auto px-4 py-10">
+          <h1 className="text-3xl text-center text-orange-500 font-bold mb-6">
+            Movie Explorer
+          </h1>
+          <MovieSearch />
+        </div>
       </div>
   );
 };
 
-export default MovieSearch;
+export default App;
