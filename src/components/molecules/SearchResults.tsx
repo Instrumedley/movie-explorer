@@ -2,7 +2,7 @@ import React from 'react';
 import {Paragraph} from '../atoms/paragraph/Paragraph';
 import {Label} from '../atoms/label/Label';
 import {Text} from '../atoms/text/Text';
-import Favorites from './Favorites';
+import {Favorites} from './Favorites';
 
 import {Movie} from '../../types/Movie';
 
