@@ -4,6 +4,7 @@ export interface Movie {
     Released: string;
     Runtime: string;
     Type: string;
+    imdbID: string;
     imdbRating: string;
     imdbVotes: string;
     Writer: string;

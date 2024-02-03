@@ -2,6 +2,7 @@ import React from 'react';
 import {Paragraph} from '../atoms/paragraph/Paragraph';
 import {Label} from '../atoms/label/Label';
 import {Text} from '../atoms/text/Text';
+import {Favorites} from './Favorites';
 
 import {Movie} from '../../types/Movie';
 
@@ -23,6 +24,7 @@ const SearchResults: React.FC<SearchResultsProps> = ({movies,error }) => {
                     <Paragraph className="mt-2">
                         <Label>Year:</Label> <Text>{movie.Year}</Text>
                     </Paragraph>
+                    <Favorites movie={movie} />
                 </div>
                 ))
             )}
