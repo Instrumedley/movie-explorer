@@ -9,6 +9,7 @@ export interface Movie {
     imdbVotes: string;
     Writer: string;
     Actors: string;
+    Genre: string;
     Plot: string;
     Director: string;
     Language: string;
