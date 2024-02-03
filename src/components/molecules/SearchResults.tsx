@@ -3,6 +3,7 @@ import {Paragraph} from '../atoms/paragraph/Paragraph';
 import {Label} from '../atoms/label/Label';
 import {Text} from '../atoms/text/Text';
 import {Favorites} from './Favorites';
+import {SeeDetails} from './SeeDetails';
 
 import {Movie} from '../../types/Movie';
 
@@ -30,8 +31,11 @@ const SearchResults: React.FC<SearchResultsProps> = ({movies,error }) => {
                     <Paragraph className="mt-2">
                         <Label>Director: </Label><Text>{movie.Director}</Text>
                     </Paragraph>
-                    <div className="flex justify-end">
+                    <div className="flex justify-end mt-5">
                         <Favorites movie={movie} />
+                    </div>
+                    <div>
+                        <SeeDetails movie={movie} />
                     </div>
                 </div>
                 ))
