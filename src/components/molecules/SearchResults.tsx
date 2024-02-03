@@ -24,7 +24,15 @@ const SearchResults: React.FC<SearchResultsProps> = ({movies,error }) => {
                     <Paragraph className="mt-2">
                         <Label>Year:</Label> <Text>{movie.Year}</Text>
                     </Paragraph>
-                    <Favorites movie={movie} />
+                    <Paragraph className="mt-2">
+                        <Label>Plot:</Label> <Text>{movie.Plot}</Text>
+                    </Paragraph>
+                    <Paragraph className="mt-2">
+                        <Label>Director: </Label><Text>{movie.Director}</Text>
+                    </Paragraph>
+                    <div className="flex justify-end">
+                        <Favorites movie={movie} />
+                    </div>
                 </div>
                 ))
             )}

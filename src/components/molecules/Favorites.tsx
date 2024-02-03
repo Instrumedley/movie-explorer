@@ -22,13 +22,13 @@ export const Favorites: React.FC<FavoritesProps> = ({ movie }) => {
 
 
     return (
-        <button onClick={toggleFavorite} aria-label={isFavorite(movie.imdbID) ? 'Remove from favorites' : 'Add to favorites'}>
+        <button onClick={toggleFavorite}>
             {isFavorite(movie.imdbID) ? (
-                <div>
+                <div className="flex items-center space-x-2">
                     <FavoritesIcon />
                     <Label>Remove from Favorites</Label>
                 </div>):
-                (<div>
+                (<div className="flex items-center space-x-2">
                     <NotInFavoritesIcon />
                     <Label>Add to Favorites</Label>
                 </div>)}
