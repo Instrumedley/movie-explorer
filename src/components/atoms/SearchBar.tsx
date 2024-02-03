@@ -26,6 +26,7 @@ const SearchBar: React.FC<{ onSearch: (query: string) => void }> = ({ onSearch }
             <button
                 type="submit"
                 className="bg-orange-500 text-white p-2 rounded-r-lg hover:bg-orange-600"
+                name="searchButton"
             >
                 Search
             </button>
