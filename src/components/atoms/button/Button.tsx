@@ -11,13 +11,13 @@ interface ButtonProps extends Omit<ComponentProps<"button">, "className" | "onCl
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     ({ children, onPress, label, icon, disabled, theme = 'regular',size, ...rest }, ref) => {
-        const baseClasses = "flex-none text-white text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:outline-none transition-colors duration-200";
+        const baseClasses = "flex-none text-white text-lg leading-6 font-semibold py-2 px-3 border border-transparent rounded-xl focus:outline-none transition-colors duration-200";
         const disabledClasses = disabled ? "opacity-30 cursor-not-allowed" : "";
         const sizeClasses = {
             small: "text-xs",
             large: "text-lg py-3 px-6",
         };
-        const resolvedSizeClass = size ? sizeClasses[size] : "text-md py-2 px-4";
+        const resolvedSizeClass = size ? sizeClasses[size] : "text-md";
 
         const themeClasses = {
             regular: "bg-orange-600 hover:bg-orange-700 focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-gray-900",
@@ -25,7 +25,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
                 "text-sm px-5 py-2.5 me-2 mb-2 dark:border-yellow-300 dark:text-yellow-300 dark:hover:text-white dark:hover:bg-yellow-400 dark:focus:ring-yellow-900",
             red: "bg-red-600 hover:bg-red-700 focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-red-900",
             green: "bg-green-600 hover:bg-green-700 focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-green-900",
-            linkButton: "text-blue-500 hover:text-blue-700"
+            linkButton: "px-0 text-blue-500 hover:text-blue-700"
         }[theme];
         const iconBaseClasses = "flex items-center space-x-2";
 

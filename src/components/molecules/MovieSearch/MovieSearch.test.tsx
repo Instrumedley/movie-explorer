@@ -1,5 +1,5 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import MovieSearch from '../../components/molecules/MovieSearch';
+import {MovieSearch} from 'components/molecules/MovieSearch/MovieSearch.tsx';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 
@@ -47,7 +47,7 @@ const movieData = {
     "Response": "True"
 };
 
-describe('MovieSearch Component 1', () => {
+describe('MovieSearch Component', () => {
     beforeEach(() => {
         mockAxios.restore();
     });
