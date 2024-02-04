@@ -1,6 +1,7 @@
 import React from 'react';
 import {useFavorites} from "hooks/useFavorites.ts";
 import { Movie } from '../../types/Movie';
+import Button from "components/atoms/button";
 
 export const FavoritesDashboard: React.FC = () => {
     const { favorites, removeFromFavorites } = useFavorites();
@@ -28,11 +29,12 @@ export const FavoritesDashboard: React.FC = () => {
                         <td className="px-4 py-2">{movie.imdbRating}</td>
                         <td className="px-4 py-2">{movie.Plot}</td>
                         <td className="px-4 py-2">
-                            <button
-                                className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded"
-                                onClick={() => removeFromFavorites(movie.imdbID)}>
-                                Remove
-                            </button>
+                            <Button
+                                onPress={() => removeFromFavorites(movie.imdbID)}
+                                label="Remove"
+                                theme="red"
+                                size="small"
+                            />
                         </td>
                     </tr>
                 ))}

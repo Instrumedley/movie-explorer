@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import SearchBar from '../atoms/SearchBar';
+import {SearchBar} from '../atoms/SearchBar';
 import SearchResults from "components/molecules/SearchResults.tsx";
 import axios from 'axios';
 import { Movie } from '../../types/Movie';

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Movie } from '../../types/Movie';
-import MovieDetailsModal from '../molecules/MovieDetailsModal'; // Path to the modal component
+import MovieDetailsModal from '../molecules/MovieDetailsModal';
+import Button from '../atoms/button/';
 
 interface SeeDetailsProps {
     movie: Movie;
@@ -14,7 +15,7 @@ export const SeeDetails: React.FC<SeeDetailsProps> = ({ movie }) => {
 
     return (
         <>
-            <button onClick={handleOpenModal} className="text-blue-500 hover:text-blue-700">See Details</button>
+            <Button onPress={handleOpenModal} theme="linkButton" label="See Details" />
             {isModalOpen && <MovieDetailsModal movie={movie} onClose={handleCloseModal} />}
         </>
     );

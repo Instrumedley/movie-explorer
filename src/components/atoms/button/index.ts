@@ -1,3 +1,3 @@
-import Button from "./button";
+import {Button} from "./Button.tsx";
 
 export default Button;

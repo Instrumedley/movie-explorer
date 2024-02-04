@@ -3,6 +3,7 @@ import { Movie } from '../../types/Movie';
 import {Paragraph} from "components/atoms/paragraph/Paragraph.tsx";
 import {Label} from "components/atoms/label/Label.tsx";
 import {Text} from "components/atoms/text/Text.tsx";
+import Button from "components/atoms/button";
 
 interface MovieDetailsModalProps {
     movie: Movie;
@@ -27,8 +28,7 @@ const MovieDetailsModal: React.FC<MovieDetailsModalProps> = ({ movie, onClose })
                         <Paragraph><Label>Awards: </Label>{movie.Awards}</Paragraph>
                         <Paragraph><Label>IMDb Rating: </Label>{movie.imdbRating}</Paragraph>
                         <Paragraph><Label>IMDb Votes: </Label>{movie.imdbVotes}</Paragraph>
-
-                        <button onClick={onClose} className="mt-4 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-700">Close</button>
+                        <Button onPress={onClose} theme="red" label="Close" />
                     </div>
                 </div>
             </div>

@@ -1,8 +1,7 @@
-// src/components/atoms/SearchBar.tsx
-
 import React, { useState } from 'react';
+import Button from "components/atoms/button";
 
-const SearchBar: React.FC<{ onSearch: (query: string) => void }> = ({ onSearch }) => {
+export const SearchBar: React.FC<{ onSearch: (query: string) => void }> = ({ onSearch }) => {
     const [query, setQuery] = useState('');
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -23,15 +22,7 @@ const SearchBar: React.FC<{ onSearch: (query: string) => void }> = ({ onSearch }
                 placeholder="Search for a movie..."
                 className="w-full p-2 rounded-l-lg text-gray-700 bg-gray-800 border-0"
             />
-            <button
-                type="submit"
-                className="bg-orange-500 text-white p-2 rounded-r-lg hover:bg-orange-600"
-                name="searchButton"
-            >
-                Search
-            </button>
+            <Button onPress={handleSearch} theme="regular" label="Search" />
         </form>
     );
 };
-
-export default SearchBar;

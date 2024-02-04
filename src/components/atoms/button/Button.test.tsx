@@ -1,4 +1,4 @@
-import Button from "./button";
+import {Button} from "./Button.tsx";
 import { render, fireEvent } from "@testing-library/react";
 import { describe, test, expect, vi } from "vitest";
 
@@ -8,7 +8,7 @@ describe("Button test", () => {
     const label = "This is a button";
 
     const { getByText, getByRole } = render(
-      <Button onClick={onClick}>{label}</Button>
+      <Button onPress={onClick}>{label}</Button>
     );
 
     const button = getByRole("button");
