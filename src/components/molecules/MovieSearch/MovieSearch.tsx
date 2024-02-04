@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import {SearchBar} from '../atoms/SearchBar';
+import {SearchBar} from '../../atoms/SearchBar.tsx';
 import SearchResults from "components/molecules/SearchResults.tsx";
 import axios from 'axios';
-import { Movie } from '../../types/Movie';
+import { Movie } from '../../../types/Movie.tsx';
 
 export const MovieSearch: React.FC = () => {
     const [movies, setMovies] = useState<Movie[]>([]);

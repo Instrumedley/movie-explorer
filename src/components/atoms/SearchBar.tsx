@@ -20,7 +20,7 @@ export const SearchBar: React.FC<{ onSearch: (query: string) => void }> = ({ onS
                 value={query}
                 onChange={handleInputChange}
                 placeholder="Search for a movie..."
-                className="w-full p-2 rounded-l-lg text-gray-700 bg-gray-800 border-0"
+                className="w-full p-2 rounded-full text-white bg-gray-800 border-0 mr-2"
             />
             <Button onPress={handleSearch} theme="regular" label="Search" />
         </form>

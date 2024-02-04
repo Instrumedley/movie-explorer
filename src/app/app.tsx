@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {MovieSearch} from '../components/molecules/MovieSearch';
+import {MovieSearch} from 'components/molecules/MovieSearch/MovieSearch.tsx';
 import {FavoritesDashboard} from '../components/organisms/FavoritesDashboard';
 import Button from "components/atoms/button";
 

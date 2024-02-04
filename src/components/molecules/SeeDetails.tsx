@@ -14,9 +14,9 @@ export const SeeDetails: React.FC<SeeDetailsProps> = ({ movie }) => {
     const handleCloseModal = () => setIsModalOpen(false);
 
     return (
-        <>
+        <div className="flex justify-start mt-10">
             <Button onPress={handleOpenModal} theme="linkButton" label="See Details" />
             {isModalOpen && <MovieDetailsModal movie={movie} onClose={handleCloseModal} />}
-        </>
+        </div>
     );
 };

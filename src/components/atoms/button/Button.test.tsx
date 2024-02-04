@@ -8,7 +8,7 @@ describe("Button test", () => {
     const label = "This is a button";
 
     const { getByText, getByRole } = render(
-      <Button onPress={onClick}>{label}</Button>
+      <Button onPress={onClick} label={label}/>
     );
 
     const button = getByRole("button");
@@ -16,7 +16,6 @@ describe("Button test", () => {
     expect(getByText(label)).toBeInTheDocument();
     expect(button).toBeInTheDocument();
     fireEvent.click(button);
-
     expect(onClick).toHaveBeenCalledTimes(1);
   });
 });
