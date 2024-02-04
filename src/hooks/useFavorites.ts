@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Movie } from '../types/Movie'; // Adjust the import path as needed
+import { Movie } from '../types/Movie';
 
 export const useFavorites = () => {
     const [favorites, setFavorites] = useState<Movie[]>([]);

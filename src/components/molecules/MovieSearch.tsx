@@ -4,7 +4,7 @@ import SearchResults from "components/molecules/SearchResults.tsx";
 import axios from 'axios';
 import { Movie } from '../../types/Movie';
 
-const MovieSearch: React.FC = () => {
+export const MovieSearch: React.FC = () => {
     const [movies, setMovies] = useState<Movie[]>([]);
     const [error, setError] = useState<string | null>(null);
     const searchMovies = async (query: string) => {
@@ -36,5 +36,3 @@ const MovieSearch: React.FC = () => {
         </div>
     );
 };
-
-export default MovieSearch;
