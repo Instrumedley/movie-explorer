@@ -26,4 +26,10 @@
     -webkit-animation: slide 2s linear infinite;
     animation: slide 4s linear infinite;
   }
+  @media (max-width: 640px) {
+    .responsive-table {
+      overflow-x: auto;
+      display: block;
+    }
+  }
 }
