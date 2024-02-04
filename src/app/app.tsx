@@ -22,8 +22,8 @@ const App: React.FC = () => {
               />
           </header>
           {/* Content */}
-          <div className="flex-grow container mx-auto px-4 py-10">
-              {showFavorites ? (
+          <div className="flex-grow container mx-auto px-4 sm:px-10 py-10">
+            {showFavorites ? (
                   <FavoritesDashboard />
               ) : (
                   <MovieSearch />

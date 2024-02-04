@@ -11,7 +11,7 @@ interface ButtonProps extends Omit<ComponentProps<"button">, "className" | "onCl
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     ({ children, onPress, label, icon, disabled, theme = 'regular',size, ...rest }, ref) => {
-        const baseClasses = "w-full sm:w-auto flex-none text-white text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:outline-none transition-colors duration-200";
+        const baseClasses = "flex-none text-white text-lg leading-6 font-semibold py-3 px-6 border border-transparent rounded-xl focus:outline-none transition-colors duration-200";
         const disabledClasses = disabled ? "opacity-30 cursor-not-allowed" : "";
         const sizeClasses = {
             small: "text-xs",
